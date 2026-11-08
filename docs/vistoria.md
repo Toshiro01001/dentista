@@ -19,7 +19,7 @@ font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-ac
 - Sem estilo inline: todo o CSS está em `css/estilo.css`. A única alteração de estilo em tempo de execução é a variável `--pos` do comparador, feita por `element.style.setProperty`, que a CSP permite (é CSSOM, não atributo `style`).
 - `connect-src 'none'`: nenhum `fetch`, `XMLHttpRequest` ou WebSocket pode sair da página.
 - `form-action 'none'`: mesmo que o JavaScript falhe, o formulário de agendamento não consegue enviar nada a lugar nenhum.
-- `img-src 'self' data:` existe para o favicon SVG e eventuais imagens em `data:`; hoje só o favicon é usado.
+- `img-src 'self' data:` existe para o favicon SVG e eventuais imagens em `data:`; hoje são usados o favicon e a foto do hero (`img/hero.webp`), que é um arquivo do próprio site, sem pedido externo.
 - O `404.html` usa `script-src 'none'`, pois não tem JavaScript.
 - `frame-ancestors` não pode ser declarado por `meta`; o GitHub Pages não permite cabeçalhos HTTP próprios. Risco residual: a página pode ser colocada em um `iframe` por outro site. Como não há sessão nem dado sensível, o impacto é nulo.
 

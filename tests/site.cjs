@@ -58,6 +58,33 @@ async function medir(page) {
   });
 }
 
+// Foto do hero: carregou, tem a proporção 4:3 e o texto do hero não encosta nela (legibilidade).
+async function checarHero(page) {
+  return page.evaluate(() => {
+    const img = document.querySelector("img.hero-foto");
+    if (!img) return { existe: false };
+    const r = img.getBoundingClientRect();
+    const caixa = img.parentElement.getBoundingClientRect();
+    const textos = [...document.querySelectorAll("h1, h1 ~ p, .hero-texto p, .hero-texto a, .hero-texto h1")];
+    let sobreposto = 0;
+    for (const t of textos) {
+      const b = t.getBoundingClientRect();
+      if (!b.width || !b.height) continue;
+      const w = Math.min(b.right, r.right) - Math.max(b.left, r.left);
+      const h = Math.min(b.bottom, r.bottom) - Math.max(b.top, r.top);
+      if (w > 1 && h > 1) sobreposto++;
+    }
+    return {
+      existe: true,
+      carregou: img.complete && img.naturalWidth === 1440 && img.naturalHeight === 1080,
+      alt: (img.getAttribute("alt") || "").length > 20,
+      proporcao: Math.round((caixa.width / caixa.height) * 100) / 100,
+      cabe: r.left >= -1 && r.right <= document.documentElement.clientWidth + 1,
+      sobreposto
+    };
+  });
+}
+
 (async () => {
   const browser = await chromium.launch();
   for (const tela of TELAS) {
@@ -71,6 +98,12 @@ async function medir(page) {
 
     await page.goto(BASE, { waitUntil: "networkidle" });
     await page.waitForTimeout(1500);
+
+    const hero = await checarHero(page);
+    ok(hero.existe && hero.carregou, "foto do hero carregou (1440x1080)");
+    ok(hero.existe && hero.alt, "foto do hero tem alt descritivo");
+    ok(hero.existe && Math.abs(hero.proporcao - 1.33) < 0.02, `contêiner do hero em 4:3 (${hero.proporcao})`);
+    ok(hero.existe && hero.cabe && hero.sobreposto === 0, `foto cabe na tela e nenhum texto do hero fica sobre ela (${hero.sobreposto} sobreposições)`);
 
     const m = await medir(page);
     ok(!m.rolagemHorizontal, `sem rolagem horizontal (${m.largura} x ${m.cliente})`);

@@ -223,9 +223,9 @@ code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 
 .hero {
   max-width: var(--largura);
   margin: 0 auto;
-  padding: 2.5rem var(--margem) 3rem;
+  padding: 1.5rem var(--margem) 3rem;
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: center;
 }
 .hero h1 {
@@ -247,40 +247,38 @@ code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 
   gap: 0.75rem;
 }
 .hero-nota { margin-top: 1.25rem; font-size: 0.875rem; color: var(--pedra); }
-.hero-imagem { max-width: 560px; }
-.arco { width: 100%; height: auto; }
-.arco-fundo { fill: var(--hortela); }
-.dente { fill: var(--branco); stroke: var(--hortela-escura); stroke-width: 2; }
-.dente-brilho { fill: var(--branco); }
-.arco-linha { fill: none; stroke: var(--cerrado); stroke-width: 3; stroke-linecap: round; }
-.arco-ponto { fill: var(--mel); }
+.hero-imagem {
+  max-width: 560px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #C6DACE; /* média da foto: aparece enquanto ela carrega */
+}
+@media (max-width: 899px) {
+  .hero-imagem { order: -1; } /* no celular a foto abre a página, o texto vem logo abaixo */
+}
+.hero-foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 @media (min-width: 900px) {
   .hero {
     grid-template-columns: 1.05fr 1fr;
+    gap: 2rem;
     padding-top: 4rem;
     padding-bottom: 4.5rem;
   }
+  .hero-imagem { border-radius: 28px; }
 }
 
-/* Movimento de abertura: os dentes sobem até o arco */
+/* Movimento de abertura: a foto aparece com uma leve ampliação */
 @media (prefers-reduced-motion: no-preference) {
-  .dente {
-    animation: subir 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    transform-origin: center bottom;
-  }
-  .dentes .dente:nth-child(1) { animation-delay: 0ms; }
-  .dentes .dente:nth-child(2) { animation-delay: 70ms; }
-  .dentes .dente:nth-child(3) { animation-delay: 140ms; }
-  .dentes .dente:nth-child(4) { animation-delay: 210ms; }
-  .dentes .dente:nth-child(5) { animation-delay: 280ms; }
-  .dentes .dente:nth-child(6) { animation-delay: 350ms; }
-  .dentes .dente:nth-child(7) { animation-delay: 420ms; }
-  .arco-linha { stroke-dasharray: 600; stroke-dashoffset: 600; animation: tracar 900ms 400ms ease-out forwards; }
-  .arco-ponto { opacity: 0; animation: aparecer 300ms 1100ms ease-out forwards; }
-  @keyframes subir { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-  @keyframes tracar { to { stroke-dashoffset: 0; } }
-  @keyframes aparecer { to { opacity: 1; } }
+  .hero-foto { animation: foto-entra 800ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  @keyframes foto-entra { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: scale(1); } }
 }
 
 /* Seções */

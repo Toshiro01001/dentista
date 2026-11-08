@@ -58,16 +58,26 @@ Sem rótulos em caixa alta acima dos títulos. Sem numeração 01/02/03.
 
 ## Imagem forte
 
-O hero tem um **arco de sorriso em SVG**: oito formas de dente desenhadas como retângulos arredondados distribuídos em um arco, sobre um fundo Hortelã, com um brilho em Mel em um único dente. É geometria, não um sorriso realista. O mesmo desenho, menor, vira o símbolo da marca no cabeçalho.
+O hero é uma **foto gerada por IA (Canva)**: um molar de porcelana branca, brilhante, em pé sobre um fundo liso verde-menta, com uma sombra curta e macia. Ela é ilustrativa, não é de paciente nem de consultório real. A menta da foto conversa com o Hortelã da paleta, e o dente, sozinho e com muito ar em volta, é a "coisa memorável" da primeira tela. O contêiner tem proporção fixa de 4:3 e cantos de 20 px no celular e 28 px no computador, o mesmo raio dos blocos grandes. Enquanto a foto carrega, o contêiner mostra a cor média dela, para a página não dar salto.
 
-Na galeria "antes e depois", os sorrisos também são SVG estilizados: lábios em uma forma simples e dentes em retângulos arredondados. Mudam a cor, a inclinação ou o contorno de um dente para mostrar clareamento, alinhamento e restauração. Nada de fotos.
+O símbolo da marca no cabeçalho continua sendo um desenho SVG de cinco barras arredondadas (um arco de dentes), com uma em Mel.
+
+Na galeria "antes e depois", os sorrisos são SVG estilizados: lábios em uma forma simples e dentes em retângulos arredondados. Mudam a cor, a inclinação ou o contorno de um dente para mostrar clareamento, alinhamento e restauração. São desenhos, não fotos de pacientes.
+
+### Foto do hero
+
+- **Arquivo**: `img/hero.webp`, 1440 x 1080 px, proporção 4:3.
+- **Origem**: gerada por IA no Canva. Fica avisado no README e aqui, porque é uma imagem ilustrativa.
+- **Prompt resumido**: "Molar de porcelana branca e brilhante, em pé, fotografado de frente em leve ângulo, centralizado, sobre fundo liso verde-menta. Luz suave de estúdio, sombra curta e macia à direita, muito espaço livre em volta. Estilo editorial de site premium, sem texto, sem pessoas, proporção 4:3."
+- **Texto alternativo**: "Molar de porcelana branca e brilhante, em pé sobre um fundo liso verde-menta, com uma sombra suave ao lado."
+- **Texto do hero**: fica ao lado da foto no computador e abaixo dela no celular, nunca por cima. Por isso o contraste do texto é o da página (Grafite sobre Esmalte), não depende da foto.
 
 ## Movimento
 
-- Um momento orquestrado: na abertura, os oito dentes do hero sobem até o arco, em sequência, em 700 ms.
+- Um momento orquestrado: na abertura, a foto do hero aparece com uma leve ampliação, em 800 ms.
 - Respostas a ações: horário escolhido muda para Mel, o controle deslizante acompanha o dedo, o resultado do simulador muda de valor com uma transição curta.
 - Com `prefers-reduced-motion: reduce`, tudo aparece sem animação.
 
 ## Regra de ouro
 
-Uma coisa memorável por tela: o arco de dentes no hero, o calendário na agenda, o número em Mel no simulador, o controle deslizante na galeria. O resto fica quieto.
+Uma coisa memorável por tela: o dente de porcelana no hero, o calendário na agenda, o número em Mel no simulador, o controle deslizante na galeria. O resto fica quieto.

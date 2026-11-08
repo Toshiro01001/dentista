@@ -41,7 +41,7 @@ O estudo completo está em [`docs/identidade.md`](docs/identidade.md).
 - **Nome**: Nascente Odontologia. Água limpa que brota e o começo de um sorriso novo. Nada de "odontoclínica".
 - **Paleta**: Esmalte `#F7F8F5` (fundo), Grafite `#1C2A2A` (texto), Cerrado `#245C4C` (cor da marca, botões e links), Hortelã `#DCEDE3` (superfícies de apoio), Mel `#C97E2E` (destaque, um por tela), Pedra `#50605D` (texto secundário). Fugi do azul-clínico genérico: as cores vêm do Cerrado e da porcelana. Todos os pares de texto passam no contraste AA.
 - **Fontes**: Outfit nos títulos (geométrica, redonda, lembra um alinhador) e Figtree no corpo (humanista, legível no celular). As duas são variáveis, locais, licença SIL OFL.
-- **Imagem forte**: um arco de dentes desenhado em SVG no topo, com um ponto em Mel. Os sorrisos do "antes e depois" também são SVG estilizados, não fotos.
+- **Imagem forte**: uma foto de um molar de porcelana sobre fundo verde-menta no topo (`img/hero.webp`). **A foto foi gerada por IA no Canva e é só ilustrativa**; não é paciente nem consultório de verdade. Os sorrisos do "antes e depois" são desenhos SVG estilizados, não fotos.
 - **Regra**: uma coisa memorável por tela, o resto quieto. Sem rótulos em caixa alta, sem numeração decorativa, sem gradientes de enfeite.
 
 ## Como funciona por dentro

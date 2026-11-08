@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Nascente Odontologia | Consultório odontológico em Cuiabá (demonstração)</title>
+  <meta name="description" content="Site de demonstração de um consultório odontológico fictício em Cuiabá: agende um horário simulado, simule a faixa de preço de um tratamento e veja antes e depois. Feito pela Mil e Uma Linhas!.">
+  <meta name="theme-color" content="#245C4C">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<a class="pular" href="#inicio">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="faixa">
+    <a class="marca" href="#inicio" aria-label="Nascente Odontologia, início">
+      <svg class="marca-simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect x="3" y="18" width="6" height="12" rx="3"/>
+        <rect x="11" y="13" width="6" height="14" rx="3"/>
+        <rect x="19" y="11" width="6" height="15" rx="3"/>
+        <rect x="27" y="13" width="6" height="14" rx="3"/>
+        <rect x="35" y="18" width="4" height="12" rx="2"/>
+      </svg>
+      <span>Nascente<small>Odontologia</small></span>
+    </a>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" data-menu>
+      <span class="menu-linhas" aria-hidden="true"></span>
+      Menu
+    </button>
+    <nav class="menu" id="menu" aria-label="Seções do site">
+      <a href="#servicos">Serviços</a>
+      <a href="#agendar">Agendar</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#antes-depois">Antes e depois</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a class="botao botao-cheio" href="#agendar">Marcar avaliação</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="hero-texto">
+      <h1 id="hero-titulo">Um sorriso tratado com calma começa com um plano claro.</h1>
+      <p class="hero-sub">Somos um consultório odontológico em Cuiabá. Aqui você vê a faixa de preço, o número de sessões e os horários livres antes de marcar. Sem surpresa na cadeira.</p>
+      <div class="hero-acoes">
+        <a class="botao botao-cheio" href="#agendar">Ver horários livres</a>
+        <a class="botao botao-vazio" href="#simulador">Simular um tratamento</a>
+      </div>
+      <p class="hero-nota">Avaliação inicial: 40 minutos, com radiografia e plano por escrito.</p>
+    </div>
+    <div class="hero-imagem" aria-hidden="true">
+      <svg class="arco" viewBox="0 0 520 360" focusable="false">
+        <rect class="arco-fundo" x="0" y="0" width="520" height="360" rx="28"/>
+        <g class="dentes">
+          <rect class="dente" x="52"  y="190" width="48" height="96" rx="24"/>
+          <rect class="dente" x="112" y="150" width="50" height="118" rx="25"/>
+          <rect class="dente" x="174" y="118" width="54" height="138" rx="27"/>
+          <rect class="dente dente-brilho" x="240" y="104" width="56" height="150" rx="28"/>
+          <rect class="dente" x="308" y="118" width="54" height="138" rx="27"/>
+          <rect class="dente" x="372" y="150" width="50" height="118" rx="25"/>
+          <rect class="dente" x="432" y="190" width="48" height="96" rx="24"/>
+        </g>
+        <path class="arco-linha" d="M40 302 Q260 380 480 302"/>
+        <circle class="arco-ponto" cx="268" cy="132" r="7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
+    <div class="secao-cabeca">
+      <h2 id="servicos-titulo">O que fazemos</h2>
+      <p>Seis frentes de trabalho. Toque em qualquer uma para simular a faixa de preço.</p>
+    </div>
+    <ul class="servicos">
+      <li>
+        <h3>Avaliação e limpeza</h3>
+        <p>Exame completo, radiografia, remoção de tártaro e polimento. É a porta de entrada de todo tratamento.</p>
+        <a href="#simulador" data-servico="limpeza">Simular limpeza</a>
+      </li>
+      <li>
+        <h3>Clareamento</h3>
+        <p>No consultório, em duas sessões, ou em casa com moldeira feita sob medida. Explicamos a diferença antes de você escolher.</p>
+        <a href="#simulador" data-servico="clareamento">Simular clareamento</a>
+      </li>
+      <li>
+        <h3>Restaurações</h3>
+        <p>Resina na cor do seu dente para cáries, trincas e desgastes. Em geral resolvemos até dois dentes por sessão.</p>
+        <a href="#simulador" data-servico="restauracao">Simular restauração</a>
+      </li>
+      <li>
+        <h3>Alinhadores transparentes</h3>
+        <p>Planejamento digital, placas trocadas a cada duas semanas e consultas curtas de acompanhamento.</p>
+        <a href="#simulador" data-servico="alinhadores">Simular alinhadores</a>
+      </li>
+      <li>
+        <h3>Implantes</h3>
+        <p>Substituição de um ou mais dentes com pino de titânio e coroa de cerâmica, em etapas com intervalo para cicatrizar.</p>
+        <a href="#simulador" data-servico="implante">Simular implante</a>
+      </li>
+      <li>
+        <h3>Tratamento de canal</h3>
+        <p>Quando a dor chega ao nervo. Fazemos com anestesia reforçada e, na maioria dos casos, em uma ou duas sessões.</p>
+        <a href="#simulador" data-servico="canal">Simular canal</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Agendamento -->
+  <section class="secao secao-hortela" id="agendar" aria-labelledby="agendar-titulo">
+    <div class="secao-cabeca">
+      <h2 id="agendar-titulo">Escolha um horário</h2>
+      <p>Escolha um dia no calendário, depois um horário livre e confirme com seu nome. É uma simulação: nada é enviado e nenhuma consulta é marcada de verdade.</p>
+    </div>
+
+    <div class="agenda">
+      <div class="agenda-calendario">
+        <div class="calendario-topo">
+          <button class="calendario-nav" type="button" data-mes="-1" aria-label="Mês anterior">&lsaquo;</button>
+          <h3 class="calendario-mes" id="calendario-mes" aria-live="polite">Carregando</h3>
+          <button class="calendario-nav" type="button" data-mes="1" aria-label="Próximo mês">&rsaquo;</button>
+        </div>
+        <table class="calendario" aria-labelledby="calendario-mes">
+          <thead>
+            <tr>
+              <th scope="col"><abbr title="domingo">dom</abbr></th>
+              <th scope="col"><abbr title="segunda-feira">seg</abbr></th>
+              <th scope="col"><abbr title="terça-feira">ter</abbr></th>
+              <th scope="col"><abbr title="quarta-feira">qua</abbr></th>
+              <th scope="col"><abbr title="quinta-feira">qui</abbr></th>
+              <th scope="col"><abbr title="sexta-feira">sex</abbr></th>
+              <th scope="col"><abbr title="sábado">sáb</abbr></th>
+            </tr>
+          </thead>
+          <tbody id="calendario-corpo"></tbody>
+        </table>
+        <p class="calendario-legenda">Atendemos de segunda a sexta, das 8h às 18h, e sábado pela manhã.</p>
+      </div>
+
+      <div class="agenda-horarios">
+        <h3 id="horarios-titulo">Horários livres</h3>
+        <p class="horarios-dia" id="horarios-dia">Escolha um dia no calendário.</p>
+        <div class="horarios" id="horarios" role="group" aria-labelledby="horarios-titulo"></div>
+
+        <form class="agenda-form" id="agenda-form" novalidate hidden>
+          <div class="campo">
+            <label for="agenda-nome">Seu nome</label>
+            <input id="agenda-nome" name="nome" type="text" autocomplete="name" required minlength="2" maxlength="60">
+          </div>
+          <div class="campo">
+            <label for="agenda-servico">Motivo da consulta</label>
+            <select id="agenda-servico" name="servico">
+              <option value="Avaliação e limpeza">Avaliação e limpeza</option>
+              <option value="Clareamento">Clareamento</option>
+              <option value="Restauração">Restauração</option>
+              <option value="Alinhadores">Alinhadores</option>
+              <option value="Implante">Implante</option>
+              <option value="Tratamento de canal">Tratamento de canal</option>
+              <option value="Dor ou urgência">Dor ou urgência</option>
+            </select>
+          </div>
+          <p class="agenda-escolha" id="agenda-escolha"></p>
+          <p class="campo-erro" id="agenda-erro" role="alert"></p>
+          <button class="botao botao-cheio" type="submit">Confirmar horário</button>
+        </form>
+
+        <div class="agenda-confirmacao" id="agenda-confirmacao" hidden aria-live="polite"></div>
+
+        <div class="meus-horarios" id="meus-horarios" hidden>
+          <h3>Meus horários guardados</h3>
+          <ul id="meus-horarios-lista"></ul>
+          <p class="legenda">Esta lista fica só no seu navegador (localStorage) e some se você limpar os dados do site.</p>
+          <button class="botao botao-vazio botao-pequeno" type="button" data-limpar-horarios>Apagar lista</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador -->
+  <section class="secao" id="simulador" aria-labelledby="simulador-titulo">
+    <div class="secao-cabeca">
+      <h2 id="simulador-titulo">Simule o tratamento</h2>
+      <p>Escolha o tratamento e ajuste os detalhes. Mostramos a faixa de preço, quantas sessões costumam ser necessárias e em quanto tempo. Valores fictícios, só para demonstração.</p>
+    </div>
+
+    <div class="simulador">
+      <form class="simulador-form" id="simulador-form" novalidate>
+        <div class="campo">
+          <label for="sim-tratamento">Tratamento</label>
+          <select id="sim-tratamento" name="tratamento">
+            <option value="limpeza">Avaliação e limpeza</option>
+            <option value="clareamento">Clareamento</option>
+            <option value="restauracao">Restauração</option>
+            <option value="alinhadores">Alinhadores transparentes</option>
+            <option value="implante">Implante</option>
+            <option value="canal">Tratamento de canal</option>
+          </select>
+        </div>
+
+        <div class="campo" id="sim-campo-dentes">
+          <label for="sim-dentes">Quantos dentes? <output id="sim-dentes-valor" for="sim-dentes">1</output></label>
+          <input id="sim-dentes" name="dentes" type="range" min="1" max="8" value="1" step="1">
+        </div>
+
+        <fieldset class="campo" id="sim-campo-complexidade">
+          <legend>Complexidade</legend>
+          <div class="opcoes">
+            <label><input type="radio" name="complexidade" value="simples" checked> Simples</label>
+            <label><input type="radio" name="complexidade" value="moderada"> Moderada</label>
+            <label><input type="radio" name="complexidade" value="complexa"> Complexa</label>
+          </div>
+          <p class="legenda" id="sim-complexidade-ajuda">A complexidade real só é definida na avaliação.</p>
+        </fieldset>
+
+        <div class="campo">
+          <label for="sim-parcelas">Parcelar em <output id="sim-parcelas-valor" for="sim-parcelas">1</output> vez</label>
+          <input id="sim-parcelas" name="parcelas" type="range" min="1" max="10" value="1" step="1">
+        </div>
+      </form>
+
+      <div class="simulador-resultado" aria-live="polite">
+        <p class="resultado-rotulo">Faixa de preço estimada</p>
+        <p class="resultado-valor" id="sim-valor">de R$ 180 a R$ 260</p>
+        <p class="resultado-parcela" id="sim-parcela">à vista</p>
+        <dl class="resultado-detalhes">
+          <div>
+            <dt>Sessões</dt>
+            <dd id="sim-sessoes">1 sessão</dd>
+          </div>
+          <div>
+            <dt>Duração do tratamento</dt>
+            <dd id="sim-duracao">Mesmo dia</dd>
+          </div>
+          <div>
+            <dt>Tempo na cadeira</dt>
+            <dd id="sim-cadeira">Cerca de 50 minutos</dd>
+          </div>
+        </dl>
+        <p class="resultado-nota" id="sim-nota">Inclui exame, radiografia e polimento.</p>
+        <a class="botao botao-cheio" href="#agendar">Marcar avaliação</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Antes e depois -->
+  <section class="secao secao-escura" id="antes-depois" aria-labelledby="antes-titulo">
+    <div class="secao-cabeca">
+      <h2 id="antes-titulo">Antes e depois</h2>
+      <p>Arraste o controle para comparar. Os sorrisos são desenhos estilizados, não fotos de pacientes.</p>
+    </div>
+
+    <div class="galeria">
+      <div class="galeria-casos" role="tablist" aria-label="Casos">
+        <button class="caso-aba" type="button" role="tab" aria-selected="true" id="aba-clareamento" aria-controls="painel-comparador" data-caso="clareamento">Clareamento</button>
+        <button class="caso-aba" type="button" role="tab" aria-selected="false" id="aba-alinhamento" aria-controls="painel-comparador" data-caso="alinhamento" tabindex="-1">Alinhamento</button>
+        <button class="caso-aba" type="button" role="tab" aria-selected="false" id="aba-restauracao" aria-controls="painel-comparador" data-caso="restauracao" tabindex="-1">Restauração</button>
+      </div>
+
+      <div class="comparador" id="painel-comparador" role="tabpanel" aria-labelledby="aba-clareamento" data-caso="clareamento">
+        <div class="comparador-quadro">
+          <svg class="sorriso sorriso-antes" viewBox="60 70 480 230" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="clip-antes">
+                <path d="M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+              </clipPath>
+            </defs>
+            <path class="boca" d="M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+            <g clip-path="url(#clip-antes)">
+              <g class="dentes-antes">
+                <rect x="152" y="138" width="44" height="64" rx="16"/>
+                <rect x="198" y="128" width="46" height="80" rx="17"/>
+                <rect x="246" y="120" width="54" height="96" rx="19"/>
+                <rect x="300" y="120" width="54" height="96" rx="19"/>
+                <rect x="356" y="128" width="46" height="80" rx="17"/>
+                <rect x="404" y="138" width="44" height="64" rx="16"/>
+              </g>
+              <g class="dentes-baixo">
+                <rect x="212" y="222" width="34" height="40" rx="12"/>
+                <rect x="248" y="226" width="34" height="40" rx="12"/>
+                <rect x="284" y="228" width="32" height="40" rx="12"/>
+                <rect x="318" y="226" width="34" height="40" rx="12"/>
+                <rect x="354" y="222" width="34" height="40" rx="12"/>
+              </g>
+            </g>
+            <path class="labio" fill-rule="evenodd" d="M60 170 C140 88 460 88 540 170 C470 292 130 292 60 170 Z M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+          </svg>
+          <svg class="sorriso sorriso-depois" viewBox="60 70 480 230" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="clip-depois">
+                <path d="M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+              </clipPath>
+            </defs>
+            <path class="boca" d="M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+            <g clip-path="url(#clip-depois)">
+              <g class="dentes-depois">
+                <rect x="152" y="138" width="44" height="64" rx="16"/>
+                <rect x="198" y="128" width="46" height="80" rx="17"/>
+                <rect x="246" y="120" width="54" height="96" rx="19"/>
+                <rect x="300" y="120" width="54" height="96" rx="19"/>
+                <rect x="356" y="128" width="46" height="80" rx="17"/>
+                <rect x="404" y="138" width="44" height="64" rx="16"/>
+              </g>
+              <g class="dentes-baixo">
+                <rect x="212" y="222" width="34" height="40" rx="12"/>
+                <rect x="248" y="226" width="34" height="40" rx="12"/>
+                <rect x="284" y="228" width="32" height="40" rx="12"/>
+                <rect x="318" y="226" width="34" height="40" rx="12"/>
+                <rect x="354" y="222" width="34" height="40" rx="12"/>
+              </g>
+            </g>
+            <path class="labio" fill-rule="evenodd" d="M60 170 C140 88 460 88 540 170 C470 292 130 292 60 170 Z M85 172 C150 115 450 115 515 172 C455 265 145 265 85 172 Z"/>
+          </svg>
+          <div class="comparador-alca" aria-hidden="true"></div>
+          <span class="comparador-rotulo comparador-rotulo-antes" aria-hidden="true">Antes</span>
+          <span class="comparador-rotulo comparador-rotulo-depois" aria-hidden="true">Depois</span>
+          <input class="comparador-controle" id="comparador-controle" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes e depois: 0 mostra só o antes, 100 mostra só o depois">
+        </div>
+        <p class="comparador-texto" id="comparador-texto">Clareamento em consultório, duas sessões de 45 minutos com intervalo de uma semana.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultório -->
+  <section class="secao" id="consultorio" aria-labelledby="consultorio-titulo">
+    <div class="secao-cabeca">
+      <h2 id="consultorio-titulo">Quem atende e onde</h2>
+      <p>Duas dentistas, uma sala de espera silenciosa e estacionamento na porta. Endereço e nomes são fictícios.</p>
+    </div>
+    <div class="consultorio">
+      <div class="pessoa">
+        <h3>Dra. Helena Albuquerque</h3>
+        <p class="legenda">CRO-MT 00000 (fictício)</p>
+        <p>Clínica geral e estética. Gosta de explicar cada etapa com o espelho na mão.</p>
+      </div>
+      <div class="pessoa">
+        <h3>Dra. Marina Tavares</h3>
+        <p class="legenda">CRO-MT 00000 (fictício)</p>
+        <p>Ortodontia e alinhadores. Faz o planejamento digital na sua frente.</p>
+      </div>
+      <address class="endereco">
+        <h3>Onde estamos</h3>
+        <p>Rua das Seriemas, 000, sala 4<br>Jardim das Américas, Cuiabá, MT</p>
+        <p>Telefone fictício: (65) 0000-0000</p>
+        <p>Segunda a sexta, 8h às 18h. Sábado, 8h às 12h.</p>
+      </address>
+    </div>
+  </section>
+
+  <!-- Dúvidas -->
+  <section class="secao secao-hortela" id="duvidas" aria-labelledby="duvidas-titulo">
+    <div class="secao-cabeca">
+      <h2 id="duvidas-titulo">Dúvidas frequentes</h2>
+      <p>Toque em uma pergunta para abrir a resposta.</p>
+    </div>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>A avaliação inicial é paga?</summary>
+        <p>Sim, e o valor é abatido do primeiro tratamento que você fizer conosco. Na avaliação você recebe radiografia, exame completo e um plano por escrito com faixa de preço e número de sessões.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês aceitam plano odontológico?</summary>
+        <p>Trabalhamos com reembolso: você paga a consulta, nós emitimos o recibo e a documentação, e você pede o reembolso ao seu plano. Para este site de demonstração, nenhum convênio é real.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Clareamento estraga o dente?</summary>
+        <p>Feito com supervisão, não. Pode haver sensibilidade por alguns dias, que tratamos com gel dessensibilizante. Não indicamos clareamento em gestantes, menores de 16 anos ou dentes com cárie aberta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Tenho medo de dentista. Como vocês lidam com isso?</summary>
+        <p>Com tempo. A primeira consulta é só conversa e exame, sem procedimento. Explicamos tudo antes, combinamos um sinal com a mão para pausar e usamos anestesia em gel antes da agulha.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo dura um tratamento com alinhadores?</summary>
+        <p>Casos leves, de 6 a 8 meses. Casos moderados, de 10 a 14 meses. Casos complexos podem passar de 18 meses. O planejamento digital mostra a previsão antes de você decidir.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Posso parcelar?</summary>
+        <p>Sim, em até 10 vezes sem juros no cartão. O simulador desta página mostra o valor aproximado de cada parcela.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Como isto funciona -->
+  <section class="secao" id="como-funciona" aria-labelledby="como-titulo">
+    <div class="secao-cabeca">
+      <h2 id="como-titulo">Como este site funciona</h2>
+      <p>Esta página é uma demonstração da Mil e Uma Linhas!. Abaixo explicamos o que ela faz, em três níveis.</p>
+    </div>
+    <div class="como">
+      <div class="como-bloco">
+        <h3>Para quem não entende de tecnologia</h3>
+        <p>É um site de consultório que funciona de verdade: você escolhe um dia e um horário, simula quanto custa um tratamento e compara um sorriso antes e depois. Tudo acontece na sua tela. Nada é enviado para ninguém e nenhuma consulta é marcada. Os nomes, os preços e o endereço são inventados.</p>
+      </div>
+      <div class="como-bloco">
+        <h3>Como funciona por dentro</h3>
+        <p>O site é um conjunto de três arquivos: um de texto e estrutura (HTML), um de aparência (CSS) e um de comportamento (JavaScript). Quando você abre a página, o navegador lê os três e monta tudo sozinho. O calendário é gerado na hora com a data do seu aparelho. Os horários "ocupados" são sorteados de um jeito fixo para cada dia, então o mesmo dia mostra sempre os mesmos horários. O simulador faz contas simples com uma tabela de valores. Se você confirmar um horário, ele fica guardado só na memória do seu navegador.</p>
+      </div>
+      <details class="como-tecnico">
+        <summary>Detalhes técnicos</summary>
+        <ul>
+          <li>HTML, CSS e JavaScript puros, sem framework, sem biblioteca, sem CDN e sem analytics.</li>
+          <li><code>Content-Security-Policy</code> por <code>meta</code>: <code>default-src 'self'</code>, sem script inline, sem estilo inline, <code>connect-src 'none'</code>, <code>form-action 'none'</code>.</li>
+          <li>Fontes variáveis Outfit e Figtree servidas localmente em <code>fonts/</code> (woff2, subconjunto latino), licença SIL OFL.</li>
+          <li>Calendário gerado com <code>Date</code> no fuso do visitante; disponibilidade pseudoaleatória determinística por hash da data (função simples de 32 bits).</li>
+          <li>Comparador com <code>clip-path: inset()</code> controlado por uma variável CSS que o <code>input type="range"</code> atualiza; o mesmo controle serve mouse, toque e teclado.</li>
+          <li>Persistência opcional em <code>localStorage</code>, chave <code>nascente.agendamentos</code>, só depois de o visitante confirmar um horário.</li>
+          <li>Testes em <code>tests/site.cjs</code> com Playwright: 1280x900, iPhone 13 e 320 px, verificando console, rolagem horizontal e textos cortados.</li>
+        </ul>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape-grade">
+    <div>
+      <p class="rodape-marca">Nascente Odontologia</p>
+      <p>Consultório fictício, criado como demonstração. Nenhum dado desta página é real.</p>
+    </div>
+    <div>
+      <p><a href="#agendar">Agendar</a></p>
+      <p><a href="#simulador">Simulador</a></p>
+      <p><a href="#antes-depois">Antes e depois</a></p>
+      <p><a href="#duvidas">Dúvidas</a></p>
+    </div>
+    <div>
+      <p>Site feito pela <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>, Cuiabá.</p>
+      <p>Sem cookies, sem rastreamento, sem envio de dados.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="aviso-demo" role="note">
+  Demonstração da <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a> com dados fictícios. Nada aqui é vendido ou enviado.
+</div>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>

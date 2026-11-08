@@ -443,7 +443,7 @@ code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 
 .agenda-confirmacao {
   margin-top: 1.5rem;
   background: var(--branco);
-  border-left: 4px solid var(--cerrado);
+  border: 1px solid var(--cerrado);
   border-radius: var(--raio-p);
   padding: 1rem 1.25rem;
 }
@@ -651,7 +651,7 @@ input[type="range"] {
 }
 .pessoa h3, .endereco h3 { font-size: 1.25rem; }
 .pessoa p, .endereco p { margin-top: 0.4rem; }
-.endereco { font-style: normal; border-left: 3px solid var(--cerrado); padding-left: 1rem; }
+.endereco { font-style: normal; border: 1px solid var(--cerrado); border-radius: var(--raio-p); padding: 1rem; }
 
 /* Dúvidas */
 .faq { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 1px solid var(--hortela-escura); }

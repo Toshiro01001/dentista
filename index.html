@@ -56,45 +56,69 @@
     </div>
     <div class="hero-imagem">
       <img class="hero-foto" src="img/hero.webp" width="1440" height="1080" alt="Molar de porcelana branca e brilhante, em pé sobre um fundo liso verde-menta, com uma sombra suave ao lado." fetchpriority="high">
+      <button class="hotspot" type="button" aria-describedby="hotspot-dica" aria-label="Detalhe da coroa do molar">
+        <span class="hotspot-halo" aria-hidden="true"></span>
+        <span class="hotspot-ponto" aria-hidden="true"></span>
+        <span class="hotspot-dica" id="hotspot-dica" role="tooltip">porcelana, uma sessão</span>
+      </button>
     </div>
   </section>
 
   <!-- Serviços -->
   <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">serviços</span></p>
       <h2 id="servicos-titulo">O que fazemos</h2>
       <p>Seis frentes de trabalho. Toque em qualquer uma para simular a faixa de preço.</p>
     </div>
     <ul class="servicos">
-      <li>
-        <h3>Avaliação e limpeza</h3>
+      <li class="servico servico-com-foto">
+        <figure class="servico-midia">
+          <img src="img/servico-limpeza-bandeja.webp" width="1456" height="1088" alt="Bandeja de aço com instrumentos de limpeza dental alinhados e um espelho bucal sobre um campo verde-menta, vistos de cima." loading="lazy" decoding="async">
+          <h3>Avaliação e limpeza</h3>
+          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/></svg></span>
+        </figure>
         <p>Exame completo, radiografia, remoção de tártaro e polimento. É a porta de entrada de todo tratamento.</p>
-        <a href="#simulador" data-servico="limpeza">Simular limpeza</a>
+        <a href="#simulador" data-servico="limpeza">Simular limpeza<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
-      <li>
-        <h3>Clareamento</h3>
+      <li class="servico servico-com-foto">
+        <figure class="servico-midia">
+          <img src="img/servico-clareamento-moldeira.webp" width="1456" height="1088" alt="Moldeira transparente de clareamento sobre um modelo de arcada em resina branca, ao lado de uma seringa de gel, sobre fundo verde-menta." loading="lazy" decoding="async">
+          <h3>Clareamento</h3>
+          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+        </figure>
         <p>No consultório, em duas sessões, ou em casa com moldeira feita sob medida. Explicamos a diferença antes de você escolher.</p>
-        <a href="#simulador" data-servico="clareamento">Simular clareamento</a>
+        <a href="#simulador" data-servico="clareamento">Simular clareamento<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
-      <li>
+      <li class="servico">
+        <span class="servico-disco" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/><path d="M9.5 8.5l5 3M9.5 11.5l5-3"/></svg></span>
         <h3>Restaurações</h3>
         <p>Resina na cor do seu dente para cáries, trincas e desgastes. Em geral resolvemos até dois dentes por sessão.</p>
-        <a href="#simulador" data-servico="restauracao">Simular restauração</a>
+        <a href="#simulador" data-servico="restauracao">Simular restauração<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
-      <li>
-        <h3>Alinhadores transparentes</h3>
+      <li class="servico servico-com-foto">
+        <figure class="servico-midia">
+          <img src="img/servico-alinhadores-gesso.webp" width="1456" height="1088" alt="Alinhador transparente encaixado em um modelo de gesso de arcada dentária, com dois outros alinhadores em caixinhas abertas ao lado." loading="lazy" decoding="async">
+          <h3>Alinhadores transparentes</h3>
+          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 14c0-5 3.6-9 8-9s8 4 8 9"/><path d="M6.5 14c0-3.4 2.5-6.2 5.5-6.2s5.5 2.8 5.5 6.2"/><path d="M4 14h2.5M17.5 14H20M9 13h1.5M13.5 13H15"/></svg></span>
+        </figure>
         <p>Planejamento digital, placas trocadas a cada duas semanas e consultas curtas de acompanhamento.</p>
-        <a href="#simulador" data-servico="alinhadores">Simular alinhadores</a>
+        <a href="#simulador" data-servico="alinhadores">Simular alinhadores<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
-      <li>
-        <h3>Implantes</h3>
+      <li class="servico servico-com-foto">
+        <figure class="servico-midia">
+          <img src="img/servico-implante-modelo.webp" width="1456" height="1088" alt="Modelo didático de implante dentário com pino de titânio e coroa de cerâmica branca, em pé sobre fundo verde-menta." loading="lazy" decoding="async">
+          <h3>Implantes</h3>
+          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l-1 5H10z"/><path d="M10 8h4v2h-4zM10.5 10h3l-.5 3h-2zM11 13h2l-.4 3h-1.2zM11.4 16h1.2l-.6 4z"/></svg></span>
+        </figure>
         <p>Substituição de um ou mais dentes com pino de titânio e coroa de cerâmica, em etapas com intervalo para cicatrizar.</p>
-        <a href="#simulador" data-servico="implante">Simular implante</a>
+        <a href="#simulador" data-servico="implante">Simular implante<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
-      <li>
+      <li class="servico">
+        <span class="servico-disco" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/><path d="M12 7v9"/></svg></span>
         <h3>Tratamento de canal</h3>
         <p>Quando a dor chega ao nervo. Fazemos com anestesia reforçada e, na maioria dos casos, em uma ou duas sessões.</p>
-        <a href="#simulador" data-servico="canal">Simular canal</a>
+        <a href="#simulador" data-servico="canal">Simular canal<span class="seta" aria-hidden="true">&rarr;</span></a>
       </li>
     </ul>
   </section>
@@ -102,11 +126,16 @@
   <!-- Agendamento -->
   <section class="secao secao-hortela" id="agendar" aria-labelledby="agendar-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">agenda</span></p>
       <h2 id="agendar-titulo">Escolha um horário</h2>
       <p>Escolha um dia no calendário, depois um horário livre e confirme com seu nome. É uma simulação: nada é enviado e nenhuma consulta é marcada de verdade.</p>
     </div>
 
     <div class="agenda">
+      <div class="agenda-coluna">
+        <figure class="agenda-foto">
+          <img src="img/sala-espera-calma.webp" width="1088" height="1360" alt="Sala de espera silenciosa com duas poltronas de linho claro, mesa lateral de madeira com uma planta e parede verde-menta com luz de janela." loading="lazy" decoding="async">
+        </figure>
       <div class="agenda-calendario">
         <div class="calendario-topo">
           <button class="calendario-nav" type="button" data-mes="-1" aria-label="Mês anterior">&lsaquo;</button>
@@ -129,8 +158,9 @@
         </table>
         <p class="calendario-legenda">Atendemos de segunda a sexta, das 8h às 18h, e sábado pela manhã.</p>
       </div>
+      </div>
 
-      <div class="agenda-horarios">
+      <div class="agenda-horarios vidro-claro">
         <h3 id="horarios-titulo">Horários livres</h3>
         <p class="horarios-dia" id="horarios-dia">Escolha um dia no calendário.</p>
         <div class="horarios" id="horarios" role="group" aria-labelledby="horarios-titulo"></div>
@@ -172,6 +202,7 @@
   <!-- Simulador -->
   <section class="secao" id="simulador" aria-labelledby="simulador-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">simulador</span></p>
       <h2 id="simulador-titulo">Simule o tratamento</h2>
       <p>Escolha o tratamento e ajuste os detalhes. Mostramos a faixa de preço, quantas sessões costumam ser necessárias e em quanto tempo. Valores fictícios, só para demonstração.</p>
     </div>
@@ -211,7 +242,8 @@
         </div>
       </form>
 
-      <div class="simulador-resultado" aria-live="polite">
+      <div class="poco-hortela">
+      <div class="simulador-resultado vidro-claro" aria-live="polite">
         <p class="resultado-rotulo">Faixa de preço estimada</p>
         <p class="resultado-valor" id="sim-valor">de R$ 180 a R$ 260</p>
         <p class="resultado-parcela" id="sim-parcela">à vista</p>
@@ -232,12 +264,16 @@
         <p class="resultado-nota" id="sim-nota">Inclui exame, radiografia e polimento.</p>
         <a class="botao botao-cheio" href="#agendar">Marcar avaliação</a>
       </div>
+      </div>
     </div>
   </section>
 
   <!-- Antes e depois -->
   <section class="secao secao-escura" id="antes-depois" aria-labelledby="antes-titulo">
+    <div class="luz luz-1" aria-hidden="true"></div>
+    <div class="luz luz-2" aria-hidden="true"></div>
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">antes e depois</span></p>
       <h2 id="antes-titulo">Antes e depois</h2>
       <p>Arraste o controle para comparar. Os sorrisos são desenhos estilizados, não fotos de pacientes.</p>
     </div>
@@ -305,7 +341,7 @@
           </svg>
           <div class="comparador-alca" aria-hidden="true"></div>
           <span class="comparador-rotulo comparador-rotulo-antes" aria-hidden="true">Antes</span>
-          <span class="comparador-rotulo comparador-rotulo-depois" aria-hidden="true">Depois</span>
+          <span class="comparador-rotulo comparador-rotulo-depois" aria-hidden="true"><span class="ponto-vivo"></span>Depois</span>
           <input class="comparador-controle" id="comparador-controle" type="range" min="0" max="100" value="50" step="1" aria-label="Comparar antes e depois: 0 mostra só o antes, 100 mostra só o depois">
         </div>
         <p class="comparador-texto" id="comparador-texto">Clareamento em consultório, duas sessões de 45 minutos com intervalo de uma semana.</p>
@@ -316,59 +352,72 @@
   <!-- Consultório -->
   <section class="secao" id="consultorio" aria-labelledby="consultorio-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">consultório</span></p>
       <h2 id="consultorio-titulo">Quem atende e onde</h2>
       <p>Duas dentistas, uma sala de espera silenciosa e estacionamento na porta. Endereço e nomes são fictícios.</p>
     </div>
     <div class="consultorio">
       <div class="pessoa">
+        <figure class="pessoa-foto">
+          <img src="img/dentista-radiografia.webp" width="1088" height="1456" alt="Dentista adulta de jaleco verde-escuro vista de costas, analisando uma radiografia em um negatoscópio claro, com o rosto fora do quadro." loading="lazy" decoding="async">
+        </figure>
         <h3>Dra. Helena Albuquerque</h3>
         <p class="legenda">CRO-MT 00000 (fictício)</p>
         <p>Clínica geral e estética. Gosta de explicar cada etapa com o espelho na mão.</p>
       </div>
       <div class="pessoa">
+        <figure class="pessoa-foto">
+          <img src="img/maos-alinhador.webp" width="1088" height="1456" alt="Mãos adultas com luvas brancas segurando um alinhador transparente diante de uma tela com modelo digital desfocado, em consultório claro." loading="lazy" decoding="async">
+        </figure>
         <h3>Dra. Marina Tavares</h3>
         <p class="legenda">CRO-MT 00000 (fictício)</p>
         <p>Ortodontia e alinhadores. Faz o planejamento digital na sua frente.</p>
       </div>
-      <address class="endereco">
-        <h3>Onde estamos</h3>
-        <p>Rua das Seriemas, 000, sala 4<br>Jardim das Américas, Cuiabá, MT</p>
-        <p>Telefone fictício: (65) 0000-0000</p>
-        <p>Segunda a sexta, 8h às 18h. Sábado, 8h às 12h.</p>
-      </address>
+      <div class="consultorio-coluna">
+        <figure class="consultorio-foto">
+          <img src="img/consultorio-cadeira.webp" width="1456" height="970" alt="Consultório odontológico claro com cadeira branca, refletor desligado, parede verde-menta, armário de madeira clara e janela com luz natural." loading="lazy" decoding="async">
+        </figure>
+        <address class="endereco">
+          <h3>Onde estamos</h3>
+          <p>Rua das Seriemas, 000, sala 4<br>Jardim das Américas, Cuiabá, MT</p>
+          <p>Telefone fictício: (65) 0000-0000</p>
+          <p>Segunda a sexta, 8h às 18h. Sábado, 8h às 12h.</p>
+        </address>
+      </div>
     </div>
   </section>
 
   <!-- Dúvidas -->
   <section class="secao secao-hortela" id="duvidas" aria-labelledby="duvidas-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">dúvidas</span></p>
       <h2 id="duvidas-titulo">Dúvidas frequentes</h2>
       <p>Toque em uma pergunta para abrir a resposta.</p>
     </div>
     <div class="faq">
       <details class="faq-item">
-        <summary>A avaliação inicial é paga?</summary>
-        <p>Sim, e o valor é abatido do primeiro tratamento que você fizer conosco. Na avaliação você recebe radiografia, exame completo e um plano por escrito com faixa de preço e número de sessões.</p>
+        <summary>A avaliação inicial é paga?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Sim, e o valor é abatido do primeiro tratamento que você fizer conosco. Na avaliação você recebe radiografia, exame completo e um plano por escrito com faixa de preço e número de sessões.</p></div></div>
       </details>
       <details class="faq-item">
-        <summary>Vocês aceitam plano odontológico?</summary>
-        <p>Trabalhamos com reembolso: você paga a consulta, nós emitimos o recibo e a documentação, e você pede o reembolso ao seu plano. Para este site de demonstração, nenhum convênio é real.</p>
+        <summary>Vocês aceitam plano odontológico?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Trabalhamos com reembolso: você paga a consulta, nós emitimos o recibo e a documentação, e você pede o reembolso ao seu plano. Para este site de demonstração, nenhum convênio é real.</p></div></div>
       </details>
       <details class="faq-item">
-        <summary>Clareamento estraga o dente?</summary>
-        <p>Feito com supervisão, não. Pode haver sensibilidade por alguns dias, que tratamos com gel dessensibilizante. Não indicamos clareamento em gestantes, menores de 16 anos ou dentes com cárie aberta.</p>
+        <summary>Clareamento estraga o dente?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Feito com supervisão, não. Pode haver sensibilidade por alguns dias, que tratamos com gel dessensibilizante. Não indicamos clareamento em gestantes, menores de 16 anos ou dentes com cárie aberta.</p></div></div>
       </details>
       <details class="faq-item">
-        <summary>Tenho medo de dentista. Como vocês lidam com isso?</summary>
-        <p>Com tempo. A primeira consulta é só conversa e exame, sem procedimento. Explicamos tudo antes, combinamos um sinal com a mão para pausar e usamos anestesia em gel antes da agulha.</p>
+        <summary>Tenho medo de dentista. Como vocês lidam com isso?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Com tempo. A primeira consulta é só conversa e exame, sem procedimento. Explicamos tudo antes, combinamos um sinal com a mão para pausar e usamos anestesia em gel antes da agulha.</p></div></div>
       </details>
       <details class="faq-item">
-        <summary>Quanto tempo dura um tratamento com alinhadores?</summary>
-        <p>Casos leves, de 6 a 8 meses. Casos moderados, de 10 a 14 meses. Casos complexos podem passar de 18 meses. O planejamento digital mostra a previsão antes de você decidir.</p>
+        <summary>Quanto tempo dura um tratamento com alinhadores?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Casos leves, de 6 a 8 meses. Casos moderados, de 10 a 14 meses. Casos complexos podem passar de 18 meses. O planejamento digital mostra a previsão antes de você decidir.</p></div></div>
       </details>
       <details class="faq-item">
-        <summary>Posso parcelar?</summary>
-        <p>Sim, em até 10 vezes sem juros no cartão. O simulador desta página mostra o valor aproximado de cada parcela.</p>
+        <summary>Posso parcelar?<span class="faq-mais" aria-hidden="true"></span></summary>
+        <div class="faq-conteudo"><div class="faq-interno"><p>Sim, em até 10 vezes sem juros no cartão. O simulador desta página mostra o valor aproximado de cada parcela.</p></div></div>
       </details>
     </div>
   </section>
@@ -376,6 +425,7 @@
   <!-- Como isto funciona -->
   <section class="secao" id="como-funciona" aria-labelledby="como-titulo">
     <div class="secao-cabeca">
+      <p class="chip-linha"><span class="chip">como funciona</span></p>
       <h2 id="como-titulo">Como este site funciona</h2>
       <p>Esta página é uma demonstração da Mil e Uma Linhas!. Abaixo explicamos o que ela faz, em três níveis.</p>
     </div>
@@ -406,6 +456,8 @@
 </main>
 
 <footer class="rodape">
+  <div class="luz luz-1" aria-hidden="true"></div>
+  <div class="luz luz-2" aria-hidden="true"></div>
   <div class="rodape-grade">
     <div>
       <p class="rodape-marca">Nascente Odontologia</p>

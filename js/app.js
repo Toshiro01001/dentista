@@ -422,4 +422,85 @@
       });
     });
   }
+
+  /* ------------------------------------------------------------------ */
+  /* Cabeçalho: transparente no topo, ganha fundo depois de 20 px        */
+  /* ------------------------------------------------------------------ */
+  var topo = $(".topo");
+  if (topo) {
+    var marcarRolagem = function () {
+      topo.classList.toggle("rolado", window.scrollY > 20);
+    };
+    window.addEventListener("scroll", marcarRolagem, { passive: true });
+    marcarRolagem();
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Dúvidas: abre e fecha por grid-template-rows, uma por vez           */
+  /* ------------------------------------------------------------------ */
+  var semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var faqItens = $$(".faq-item");
+  if (faqItens.length) {
+    var fechar = function (item) {
+      if (!item.open) return;
+      if (semMovimento) { item.open = false; return; }
+      item.classList.add("fechando");
+      var conteudo = $(".faq-conteudo", item);
+      var fim = function (ev) {
+        if (ev.propertyName !== "grid-template-rows") return;
+        conteudo.removeEventListener("transitionend", fim);
+        item.classList.remove("fechando");
+        item.open = false;
+      };
+      conteudo.addEventListener("transitionend", fim);
+    };
+    var abrir = function (item) {
+      faqItens.forEach(function (outro) { if (outro !== item) fechar(outro); });
+      if (semMovimento) { item.open = true; return; }
+      item.classList.add("abrindo");
+      item.open = true;
+      /* dois quadros depois o conteúdo sai de 0fr para 1fr e a transição roda */
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () { item.classList.remove("abrindo"); });
+      });
+    };
+    faqItens.forEach(function (item) {
+      var resumo = $("summary", item);
+      if (!resumo) return;
+      resumo.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        if (item.classList.contains("fechando")) return;
+        if (item.open) fechar(item); else abrir(item);
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Revelação ao rolar: cabeça de cada seção e seu primeiro bloco       */
+  /* ------------------------------------------------------------------ */
+  if (!semMovimento && "IntersectionObserver" in window) {
+    var alvos = [];
+    $$(".secao").forEach(function (secao) {
+      var cabeca = $(".secao-cabeca", secao);
+      if (cabeca) {
+        alvos.push(cabeca);
+        if (cabeca.nextElementSibling) alvos.push(cabeca.nextElementSibling);
+      }
+    });
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add("visivel");
+          observador.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    alvos.forEach(function (el) {
+      /* o que já está na tela não some para reaparecer */
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) return;
+      el.classList.add("revelar-alvo");
+      observador.observe(el);
+    });
+  }
 })();

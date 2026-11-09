@@ -81,3 +81,47 @@ Na galeria "antes e depois", os sorrisos são SVG estilizados: lábios em uma fo
 ## Regra de ouro
 
 Uma coisa memorável por tela: o dente de porcelana no hero, o calendário na agenda, o número em Mel no simulador, o controle deslizante na galeria. O resto fica quieto.
+
+## Design systems aplicados (leva final)
+
+A paleta, as fontes e a regra de ouro continuam as mesmas. O que mudou foi a superfície: a leva final mistura dois design systems do catálogo da Mil e Uma Linhas!, traduzidos para a paleta da Nascente e escritos em CSS e JavaScript próprios (sem biblioteca, sem fonte externa, sem WebGL).
+
+**Dupla**: `spectra-design-system` (claro) e `glass-green-effect-design-system` (escuro).
+
+**Mistura**: as seções claras (#servicos, #agendar, #simulador, #consultorio, #duvidas, #como-funciona) usam os padrões do spectra com Esmalte no lugar do forest-50, Hortelã no lugar do forest-100, Cerrado no lugar do emerald-600 e Grafite no lugar do forest-950, raio 20 px nos blocos e 10 px em botões e campos; a aurora em WebGL do spectra ficou de fora e o Mel continua aparecendo uma vez por tela. A faixa escura (#antes-depois) e o rodapé usam os padrões do glass-green-effect sobre Grafite, com a Hortelã fazendo o papel do teal: luzes ambientes Hortelã a 10% e Mel a 8% em `@keyframes` lentos, cartão com inclinação 3D só com ponteiro fino e brilho Hortelã nos títulos; o cursor de rastro não entrou.
+
+Componentes aplicados:
+
+| Padrão | Origem | Onde |
+| --- | --- | --- |
+| Light glass card (branco a 60%, blur 12 px, borda branca a 40%, cresce 1% em 700 ms no hover) | spectra | `.simulador-resultado` (sobre um poço Hortelã) e `.agenda-horarios` |
+| Raised panel branco com borda Cerrado a 5% e disco de ícone Hortelã de 40 px | spectra | cada `.servico` em #servicos |
+| Application media card (foto 4:3 com degradê Grafite, título Outfit 500 Esmalte sobre a foto, disco de vidro branco a 10%, foto cresce 5% no hover) | spectra | os quatro serviços com foto |
+| Chip em caixa baixa (Figtree 600, 12 px, Cerrado sobre Hortelã a 50%) + régua de 32 px | spectra | `.chip-linha` antes de cada h2 de seção, no lugar da linha fina de largura total |
+| Primary button com véu branco a 20% que sobe em 300 ms, seta que anda 4 px e sombra Cerrado a 20% | spectra | `.botao-cheio` em todo o site |
+| Billing toggle well (poço Hortelã a 20%, padding 6 px, aba escolhida Esmalte com sombra) | spectra | `.galeria-casos` em #antes-depois |
+| FAQ toggle por `grid-template-rows` 0fr para 1fr em 500 ms, ícone + que gira 90 graus e vira menos, uma aberta por vez | spectra | `.faq-item` em #duvidas (details/summary com animação por JS) |
+| Hotspot com halo pulsante e tooltip Esmalte a 95% com blur | spectra | `.hotspot` sobre a coroa do molar no hero |
+| Navbar transparente que ganha Esmalte a 95% com blur de 20 px e hairline Hortelã depois de 20 px de rolagem | spectra | `.topo` (classe `.rolado` por JS) |
+| Glass pills on media (Grafite a 30% com blur, borda branca a 20%) com ponto Hortelã pulsante no "Depois" | spectra | `.comparador-rotulo` |
+| Ambient lights (duas luzes desfocadas de 300 px e 400 px que derivam em 8 s e 10 s) | glass-green-effect | `.luz` em #antes-depois e no rodapé |
+| Glow card com inclinação 3D leve (sobe 8 px, 2 graus em X e -2 em Y, brilho Hortelã a 20%) só com ponteiro fino | glass-green-effect | `.comparador-quadro` |
+| Text glow (text-shadow 0 0 20 px Hortelã a 35%) e frase de apoio Hortelã a 80% | glass-green-effect | h2 e p da cabeça de #antes-depois e marca do rodapé |
+| Entradas slideUp (texto, 800 ms), scaleIn (foto, 600 ms, substitui a ampliação antiga) e ações 100 ms depois; revelação ao rolar (sobe 20 px com fade em 600 ms ao cruzar 12% da tela) | glass-green-effect | #inicio e cada `.secao-cabeca` com seu primeiro bloco |
+
+Tudo isso desliga com `prefers-reduced-motion: reduce`: sem pulso, sem deriva das luzes, sem inclinação, sem revelação (o conteúdo aparece pronto).
+
+### Fotos novas (geradas por IA no Canva, ilustrativas)
+
+Os arquivos em `img/` são as fotos geradas no Canva, convertidas para webp no tamanho certo. Todas são ilustrativas, sem pacientes nem pessoas identificáveis.
+
+| Arquivo | Proporção | Onde |
+| --- | --- | --- |
+| `img/servico-limpeza-bandeja.webp` | 4:3 | Serviço "Avaliação e limpeza" |
+| `img/servico-clareamento-moldeira.webp` | 4:3 | Serviço "Clareamento" |
+| `img/servico-alinhadores-gesso.webp` | 4:3 | Serviço "Alinhadores transparentes" |
+| `img/servico-implante-modelo.webp` | 4:3 | Serviço "Implantes" |
+| `img/consultorio-cadeira.webp` | 3:2 | Acima do endereço em "Quem atende e onde" |
+| `img/dentista-radiografia.webp` | 3:4 | Dra. Helena Albuquerque |
+| `img/maos-alinhador.webp` | 3:4 | Dra. Marina Tavares |
+| `img/sala-espera-calma.webp` | 4:5 | Acima do calendário em "Escolha um horário" |

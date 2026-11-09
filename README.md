@@ -42,6 +42,8 @@ O estudo completo está em [`docs/identidade.md`](docs/identidade.md).
 - **Paleta**: Esmalte `#F7F8F5` (fundo), Grafite `#1C2A2A` (texto), Cerrado `#245C4C` (cor da marca, botões e links), Hortelã `#DCEDE3` (superfícies de apoio), Mel `#C97E2E` (destaque, um por tela), Pedra `#50605D` (texto secundário). Fugi do azul-clínico genérico: as cores vêm do Cerrado e da porcelana. Todos os pares de texto passam no contraste AA.
 - **Fontes**: Outfit nos títulos (geométrica, redonda, lembra um alinhador) e Figtree no corpo (humanista, legível no celular). As duas são variáveis, locais, licença SIL OFL.
 - **Imagem forte**: uma foto de um molar de porcelana sobre fundo verde-menta no topo (`img/hero.webp`). **A foto foi gerada por IA no Canva e é só ilustrativa**; não é paciente nem consultório de verdade. Os sorrisos do "antes e depois" são desenhos SVG estilizados, não fotos.
+- **Fotos das seções**: oito imagens novas em `img/`, também **geradas por IA no Canva e só ilustrativas** (nenhuma pessoa real, nenhum paciente): `servico-limpeza-bandeja.webp`, `servico-clareamento-moldeira.webp`, `servico-alinhadores-gesso.webp` e `servico-implante-modelo.webp` (4:3, nos cartões de serviço), `consultorio-cadeira.webp` (3:2, acima do endereço), `dentista-radiografia.webp` e `maos-alinhador.webp` (3:4, nas duas dentistas) e `sala-espera-calma.webp` (4:5, acima do calendário). Os arquivos são as fotos finais, convertidas para webp no tamanho certo.
+- **Design systems**: a leva final mistura o `spectra-design-system` (seções claras: painéis brancos, vidro branco a 60%, chips e régua, botão com véu que sobe, acordeão por `grid-template-rows`, hotspot no hero, cabeçalho que ganha fundo ao rolar) com o `glass-green-effect-design-system` (faixa escura e rodapé: luzes ambientes em CSS, cartão com inclinação 3D leve, texto com brilho, entradas em escada e revelação ao rolar). Detalhes em [`docs/identidade.md`](docs/identidade.md).
 - **Regra**: uma coisa memorável por tela, o resto quieto. Sem rótulos em caixa alta, sem numeração decorativa, sem gradientes de enfeite.
 
 ## Como funciona por dentro
@@ -50,7 +52,7 @@ O site é um conjunto de três arquivos que o navegador lê e monta sozinho:
 
 - `index.html` tem o texto e a estrutura de todas as seções.
 - `css/estilo.css` tem a aparência: cores, fontes, espaçamentos e a versão para celular.
-- `js/app.js` tem o comportamento: o menu do celular, o calendário, o simulador e o comparador.
+- `js/app.js` tem o comportamento: o menu do celular, o calendário, o simulador, o comparador, o cabeçalho que ganha fundo ao rolar, o acordeão animado das dúvidas e a revelação das seções ao rolar.
 
 O **calendário** é gerado na hora, a partir da data do aparelho do visitante. Domingos e dias passados ficam desligados. Os horários "ocupados" são sorteados de um jeito fixo para cada dia (um hash da data e da hora), então o mesmo dia mostra sempre os mesmos horários livres, o que deixa a demonstração previsível.
 

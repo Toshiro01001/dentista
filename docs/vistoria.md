@@ -56,3 +56,18 @@ O nome digitado é escolhido pelo visitante e fica só no aparelho dele. A pági
 1. `iframe` por terceiros (sem `frame-ancestors`): impacto nulo, não há sessão.
 2. Alguém pode copiar o site e apresentá-lo como consultório real: a faixa fixa de demonstração e o rodapé dizem em todas as telas que os dados são fictícios.
 3. O `localStorage` é compartilhado por todas as páginas na mesma origem (`toshiro01001.github.io`): outro site publicado no mesmo usuário do GitHub Pages pode ler a chave `nascente.agendamentos`. Por isso a chave tem prefixo próprio e guarda só o que o visitante digitou numa simulação.
+
+## Revisão de 08/11/2026 (leva final de design)
+
+Revisão feita depois de aplicar os design systems da leva final e encaixar as fotos geradas por IA no Canva.
+
+- **CSP:** a política do `index.html` é a mesma de antes da leva (conferida linha a linha). Continua sem `unsafe-inline`, sem `unsafe-eval` e sem origem externa.
+- **Script e estilo inline:** nenhum `<script>` inline, nenhum `<style>` e nenhum atributo `style` nas páginas. Os efeitos novos mudam só classes, `textContent` e propriedades CSS pelo CSSOM, que a CSP permite.
+- **Recursos externos:** nenhum script, fonte, imagem ou folha de estilo de fora. Os únicos links externos são de navegação comum (mileumalinhas.com.br e o perfil do GitHub).
+- **Bibliotecas:** nenhuma entrou. Movimento, vidro, contadores e revelação ao rolar são CSS e JavaScript escritos à mão, desligados com `prefers-reduced-motion`.
+- **innerHTML:** nenhum uso no JavaScript.
+- **eval e Function:** nenhum uso.
+- **Armazenamento:** `localStorage` continua só com o que já existia (`nascente.agendamentos`), sem chave nova nesta leva.
+- **Dados pessoais:** nenhum dado pessoal real entrou. Pessoas, empresas, telefones e endereços seguem fictícios. As fotos não retratam pessoas reais.
+- **Imagens:** arquivos webp locais em `img/`, com `width`/`height`, `loading="lazy"` e `decoding="async"`. Nenhuma é carregada de outro domínio.
+- **Testes:** `tests/site.cjs` passa em 1280x900, iPhone 13 e 320px, sem erro de console e sem rolagem horizontal.

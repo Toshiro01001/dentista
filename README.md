@@ -41,17 +41,18 @@ O estudo completo está em [`docs/identidade.md`](docs/identidade.md).
 - **Nome**: Nascente Odontologia. Água limpa que brota e o começo de um sorriso novo. Nada de "odontoclínica".
 - **Paleta**: Esmalte `#F7F8F5` (fundo), Grafite `#1C2A2A` (texto), Cerrado `#245C4C` (cor da marca, botões e links), Hortelã `#DCEDE3` (superfícies de apoio), Mel `#C97E2E` (destaque, um por tela), Pedra `#50605D` (texto secundário). Fugi do azul-clínico genérico: as cores vêm do Cerrado e da porcelana. Todos os pares de texto passam no contraste AA.
 - **Fontes**: Outfit nos títulos (geométrica, redonda, lembra um alinhador) e Figtree no corpo (humanista, legível no celular). As duas são variáveis, locais, licença SIL OFL.
-- **Imagem forte**: uma foto de um molar de porcelana sobre fundo verde-menta no topo (`img/hero.webp`). **A foto foi gerada por IA no Canva e é só ilustrativa**; não é paciente nem consultório de verdade. Os sorrisos do "antes e depois" são desenhos SVG estilizados, não fotos.
+- **Imagem forte**: um implante em 3D que acompanha a rolagem. A coroa fica na frente do título, o implante abre em três peças, passa por um scanner, vira vidro e fecha no lugar do "t" de "nascente" no rodapé. As fotos do consultório **foram geradas por IA no Canva e são só ilustrativas**; não são pacientes nem consultório de verdade. Os sorrisos do "antes e depois" são desenhos SVG estilizados, não fotos.
 - **Fotos das seções**: oito imagens novas em `img/`, também **geradas por IA no Canva e só ilustrativas** (nenhuma pessoa real, nenhum paciente): `servico-limpeza-bandeja.webp`, `servico-clareamento-moldeira.webp`, `servico-alinhadores-gesso.webp` e `servico-implante-modelo.webp` (4:3, nos cartões de serviço), `consultorio-cadeira.webp` (3:2, acima do endereço), `dentista-radiografia.webp` e `maos-alinhador.webp` (3:4, nas duas dentistas) e `sala-espera-calma.webp` (4:5, acima do calendário). Os arquivos são as fotos finais, convertidas para webp no tamanho certo.
 - **Design systems**: a leva final mistura o `spectra-design-system` (seções claras: painéis brancos, vidro branco a 60%, chips e régua, botão com véu que sobe, acordeão por `grid-template-rows`, hotspot no hero, cabeçalho que ganha fundo ao rolar) com o `glass-green-effect-design-system` (faixa escura e rodapé: luzes ambientes em CSS, cartão com inclinação 3D leve, texto com brilho, entradas em escada e revelação ao rolar). Detalhes em [`docs/identidade.md`](docs/identidade.md).
 - **Regra**: uma coisa memorável por tela, o resto quieto. Sem rótulos em caixa alta, sem numeração decorativa, sem gradientes de enfeite.
 
 ## Como funciona por dentro
 
-O site é um conjunto de três arquivos que o navegador lê e monta sozinho:
+O site é um conjunto de arquivos que o navegador lê e monta sozinho:
 
 - `index.html` tem o texto e a estrutura de todas as seções.
 - `css/estilo.css` tem a aparência: cores, fontes, espaçamentos e a versão para celular.
+- `assets/pagina.js` e `assets/index.css` são o início em 3D, já compilado (o código-fonte dele fica fora deste repositório). `js/letras.js` anima as letras dos títulos das seções.
 - `js/app.js` tem o comportamento: o menu do celular, o calendário, o simulador, o comparador, o cabeçalho que ganha fundo ao rolar, o acordeão animado das dúvidas e a revelação das seções ao rolar.
 
 O **calendário** é gerado na hora, a partir da data do aparelho do visitante. Domingos e dias passados ficam desligados. Os horários "ocupados" são sorteados de um jeito fixo para cada dia (um hash da data e da hora), então o mesmo dia mostra sempre os mesmos horários livres, o que deixa a demonstração previsível.
@@ -64,7 +65,7 @@ Se você confirma um horário, ele fica guardado na memória do seu navegador (`
 
 ## Detalhes técnicos
 
-- HTML, CSS e JavaScript puros. Sem framework, sem biblioteca, sem CDN, sem fonte externa, sem analytics.
+- Agenda, simulador e comparador em HTML, CSS e JavaScript puros. O início em 3D usa three.js, GSAP e Lenis, e os títulos animados usam React com spring-text-engine; tudo compilado e servido pelo próprio site. Sem CDN, sem fonte externa, sem analytics.
 - `Content-Security-Policy` por `meta`: `default-src 'self'`, sem script inline, sem estilo inline, `connect-src 'none'`, `form-action 'none'`, `object-src 'none'`, `base-uri 'none'`.
 - Fontes variáveis Outfit e Figtree em woff2 (subconjunto latino, obtidas do pacote `@fontsource-variable`), com licenças em `fonts/`.
 - Acessibilidade: `lang="pt-BR"`, contraste AA em todos os pares de cor, foco visível, link "pular para o conteúdo", calendário como `<table>` com botões rotulados, abas da galeria com `role="tab"` e setas do teclado, comparador operável por `input type="range"`, `aria-live` nos resultados, `prefers-reduced-motion` respeitado. Auditoria com axe-core: zero violações WCAG 2.1 AA em 1280x900 e iPhone 13.

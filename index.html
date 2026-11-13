@@ -1,128 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Nascente Odontologia | Consultório odontológico em Cuiabá (demonstração)</title>
   <meta name="description" content="Site de demonstração de um consultório odontológico fictício em Cuiabá: agende um horário simulado, simule a faixa de preço de um tratamento e veja antes e depois. Feito pela Mil e Uma Linhas!.">
   <meta name="theme-color" content="#245C4C">
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./css/estilo.css?v=20261113" />
+  <script src="./js/cedo.js?v=20261113"></script>
+  <script type="module" crossorigin src="./assets/pagina.js?v=20261113"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index.css?v=20261113">
 </head>
 <body>
-
-<a class="pular" href="#inicio">Pular para o conteúdo</a>
-
-<header class="topo">
-  <div class="faixa">
-    <a class="marca" href="#inicio" aria-label="Nascente Odontologia, início">
-      <svg class="marca-simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-        <rect x="3" y="18" width="6" height="12" rx="3"/>
-        <rect x="11" y="13" width="6" height="14" rx="3"/>
-        <rect x="19" y="11" width="6" height="15" rx="3"/>
-        <rect x="27" y="13" width="6" height="14" rx="3"/>
-        <rect x="35" y="18" width="4" height="12" rx="2"/>
+  <a class="pular" href="#topo">Pular para o conteúdo</a>
+  <header class="nav">
+  <div class="nav__barra">
+    <a class="nav__marca" href="#topo" aria-label="Nascente Odontologia, início">
+      <svg class="nav__simbolo" viewBox="0 0 20 28" aria-hidden="true" focusable="false">
+        <path d="M2.4 7.6C2.4 4.2 4.3 1.6 6.6 1.6c1.3 0 2.1.8 3.4.8s2.1-.8 3.4-.8c2.3 0 4.2 2.6 4.2 6 0 2.6-1 4.6-2.1 5.6-.4.4-1 .6-1.6.6H6.1c-.6 0-1.2-.2-1.6-.6C3.4 12.2 2.4 10.2 2.4 7.6Z" />
+        <path d="M5.4 16.4h9.2M6 19.2h8M6.4 22h7.2M7.2 24.8h5.6" />
       </svg>
-      <span>Nascente<small>Odontologia</small></span>
+      <span class="nav__nome">nascente</span>
     </a>
-    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" data-menu>
-      <span class="menu-linhas" aria-hidden="true"></span>
-      Menu
-    </button>
-    <nav class="menu" id="menu" aria-label="Seções do site">
+    <button class="nav__menu-botao" type="button" aria-expanded="false" aria-controls="menu" data-menu>Menu</button>
+    <nav class="nav__links" id="menu" aria-label="Seções do site">
       <a href="#servicos">Serviços</a>
       <a href="#agendar">Agendar</a>
       <a href="#simulador">Simulador</a>
       <a href="#antes-depois">Antes e depois</a>
       <a href="#duvidas">Dúvidas</a>
-      <a class="botao botao-cheio" href="#agendar">Marcar avaliação</a>
     </nav>
+    <a class="bt nav__cta" href="#agendar"><span>Marcar avaliação</span><i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
   </div>
 </header>
 
-<main id="inicio">
+  <main id="inicio">
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+  <h1 class="hero__titulo" id="hero-titulo" aria-label="Um sorriso tratado com calma começa com um plano claro.">
+    <span class="tl hero__l1" aria-hidden="true"><span>Tratado com <b>calma,</b></span></span>
+    <span class="tl hero__l2" aria-hidden="true"><span>plano claro</span></span>
+  </h1>
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-titulo">
-    <div class="hero-texto">
-      <h1 id="hero-titulo">Um sorriso tratado com calma começa com um plano claro.</h1>
-      <p class="hero-sub">Somos um consultório odontológico em Cuiabá. Aqui você vê a faixa de preço, o número de sessões e os horários livres antes de marcar. Sem surpresa na cadeira.</p>
-      <div class="hero-acoes">
-        <a class="botao botao-cheio" href="#agendar">Ver horários livres</a>
-        <a class="botao botao-vazio" href="#simulador">Simular um tratamento</a>
+  <!-- onde a coroa fica (o resto do implante desce para fora da tela) -->
+  <div class="hero__vaga" data-vaga="hero" aria-hidden="true"></div>
+
+  <p class="hero__texto sobe">Somos um consultório odontológico em Cuiabá. Aqui você vê a faixa de preço, o número de sessões e os horários livres antes de marcar. Sem surpresa na cadeira.</p>
+  <div class="hero__acoes sobe">
+    <p class="hero__botoes"><a class="bt" href="#agendar"><span>Ver horários livres</span><i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a><a class="link" href="#simulador">Simular um tratamento</a></p>
+    <p class="hero__nota">Avaliação inicial: 40 minutos, com radiografia e plano por escrito.</p>
+  </div>
+</section>
+
+    <section class="cena pecas" data-cena id="implante">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga pecas__vaga" data-vaga="pecas"></div></div>
+  </div>
+  <div class="cena__textos">
+    <header class="cena__abre">
+      <h2 class="titulo">
+        <span class="tl"><span>Um implante,</span></span>
+        <span class="tl"><span>peça por <em>peça.</em></span></span>
+      </h2>
+      <p class="corpo sobe">Substituição de um ou mais dentes com pino de titânio e coroa de cerâmica, em etapas com intervalo para cicatrizar.</p>
+    </header>
+    <article class="passo" data-passo="coroa">
+      <span class="passo__num sobe">01</span>
+      <h3 class="passo__titulo sobe">Coroa</h3>
+      <p class="passo__texto sobe">A parte que aparece no sorriso. É de cerâmica, na cor dos seus dentes.</p>
+    </article>
+    <article class="passo" data-passo="pilar">
+      <span class="passo__num sobe">02</span>
+      <h3 class="passo__titulo sobe">Pilar</h3>
+      <p class="passo__texto sobe">A peça do meio. Liga a coroa ao pino e fica escondida sob a gengiva.</p>
+    </article>
+    <article class="passo" data-passo="rosca">
+      <span class="passo__num sobe">03</span>
+      <h3 class="passo__titulo sobe">Pino de titânio</h3>
+      <p class="passo__texto sobe">Fica no osso, no lugar da raiz do dente. Depois dele vem o intervalo para cicatrizar.</p>
+      <a class="passo__acao sobe" href="#simulador" data-servico="implante">Simular implante</a>
+    </article>
+  </div>
+</section>
+
+    <section class="cena cena--esq tratamentos" data-cena id="servicos">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga tratamentos__vaga" data-vaga="tratamentos"></div></div>
+  </div>
+  <div class="cena__textos">
+    <header class="cena__abre">
+      <h2 class="titulo">
+        <span class="tl"><span>O que</span></span>
+        <span class="tl"><span><em>fazemos.</em></span></span>
+      </h2>
+      <p class="corpo sobe">Seis frentes de trabalho. Toque em qualquer uma para simular a faixa de preço.</p>
+    </header>
+    <article class="passo" data-passo="lente">
+      <span class="passo__num sobe">Avaliação e limpeza</span>
+      <h3 class="passo__titulo sobe">A porta de entrada de todo tratamento</h3>
+      <p class="passo__texto sobe">Exame completo, radiografia, remoção de tártaro e polimento.</p>
+      <a class="passo__acao sobe" href="#simulador" data-servico="limpeza">Simular limpeza</a>
+    </article>
+    <article class="passo" data-passo="clareamento">
+      <span class="passo__num sobe">Clareamento</span>
+      <h3 class="passo__titulo sobe">No consultório ou em casa</h3>
+      <p class="passo__texto sobe">No consultório, em duas sessões, ou em casa com moldeira feita sob medida. Explicamos a diferença antes de você escolher.</p>
+      <a class="passo__acao sobe" href="#simulador" data-servico="clareamento">Simular clareamento</a>
+    </article>
+    <article class="passo" data-passo="alinhador">
+      <span class="passo__num sobe">Alinhadores transparentes</span>
+      <h3 class="passo__titulo sobe">Placas trocadas a cada duas semanas</h3>
+      <p class="passo__texto sobe">Planejamento digital, placas trocadas a cada duas semanas e consultas curtas de acompanhamento.</p>
+      <a class="passo__acao sobe" href="#simulador" data-servico="alinhadores">Simular alinhadores</a>
+    </article>
+    <article class="passo" data-passo="outros">
+      <span class="passo__num sobe">E também</span>
+      <ul class="passo__links sobe">
+        <li><b>Restaurações</b><span>Resina na cor do seu dente para cáries, trincas e desgastes. Em geral resolvemos até dois dentes por sessão.</span><a class="passo__acao" href="#simulador" data-servico="restauracao">Simular restauração</a></li>
+        <li><b>Implantes</b><span>Substituição de um ou mais dentes com pino de titânio e coroa de cerâmica, em etapas com intervalo para cicatrizar.</span><a class="passo__acao" href="#simulador" data-servico="implante">Simular implante</a></li>
+        <li><b>Tratamento de canal</b><span>Quando a dor chega ao nervo. Fazemos com anestesia reforçada e, na maioria dos casos, em uma ou duas sessões.</span><a class="passo__acao" href="#simulador" data-servico="canal">Simular canal</a></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+    <section class="cena planejamento" data-cena id="plano">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga planejamento__vaga" data-vaga="planejamento"></div></div>
+  </div>
+  <div class="cena__textos">
+    <header class="cena__abre">
+      <h2 class="titulo">
+        <span class="tl"><span>Primeiro o plano,</span></span>
+        <span class="tl"><span>depois a <em>cadeira.</em></span></span>
+      </h2>
+      <p class="corpo sobe">Aqui você vê a faixa de preço, o número de sessões e os horários livres antes de marcar.</p>
+    </header>
+    <article class="passo" data-passo="tomografia">
+      <span class="passo__num sobe">01</span>
+      <h3 class="passo__titulo sobe">Avaliação inicial</h3>
+      <p class="passo__texto sobe">40 minutos, com exame completo e radiografia. A primeira consulta é só conversa e exame, sem procedimento.</p>
+    </article>
+    <article class="passo" data-passo="escaneamento">
+      <span class="passo__num sobe">02</span>
+      <h3 class="passo__titulo sobe">Plano por escrito</h3>
+      <p class="passo__texto sobe">Você recebe um plano por escrito com faixa de preço e número de sessões.</p>
+    </article>
+    <article class="passo" data-passo="cirurgia">
+      <span class="passo__num sobe">03</span>
+      <h3 class="passo__titulo sobe">O horário é você quem escolhe</h3>
+      <p class="passo__texto sobe">Um calendário mostra os dias de atendimento e os horários livres de cada um.</p>
+    </article>
+    <article class="passo" data-passo="coroa">
+      <span class="passo__num sobe">04</span>
+      <h3 class="passo__titulo sobe">Cada etapa explicada</h3>
+      <p class="passo__texto sobe">Explicamos tudo antes e combinamos um sinal com a mão para pausar.</p>
+    </article>
+  </div>
+</section>
+
+    <section class="cena cena--meio claras" data-cena id="claras">
+  <div class="cena__visual" aria-hidden="true">
+    <div class="cena__fixa"><div class="cena__vaga claras__vaga" data-vaga="claras"></div></div>
+  </div>
+  <div class="cena__textos claras__textos">
+    <!-- a palavra e a frase também são desenhadas no 3D, atrás da coroa de vidro; estas ficam para leitor de tela,
+         busca e para quando não houver WebGL -->
+    <h2 class="claras__palavra" data-vidro><span class="vl">Às</span> <span class="vl">claras</span></h2>
+    <p class="claras__colchete" data-vidro>
+      <span class="vl claras__c">[</span>
+      <span class="claras__frase"><span class="vl">preço, sessões e horários</span> <span class="vl">antes de marcar</span></span>
+      <span class="vl claras__c">]</span>
+    </p>
+    <div class="claras__fim">
+      <p class="claras__texto corpo sobe">O simulador desta página mostra a faixa de preço, quantas sessões costumam ser necessárias e o valor aproximado de cada parcela. Sem surpresa na cadeira.</p>
+      <div class="claras__acao sobe">
+        <p>Em até 10 vezes sem juros no cartão.</p>
+        <a class="bt" href="#simulador"><span>Simular um tratamento</span><i class="bt__seta" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M1 7h12M8 2l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a>
       </div>
-      <p class="hero-nota">Avaliação inicial: 40 minutos, com radiografia e plano por escrito.</p>
     </div>
-    <div class="hero-imagem">
-      <img class="hero-foto" src="img/hero.webp" width="1440" height="1080" alt="Molar de porcelana branca e brilhante, em pé sobre um fundo liso verde-menta, com uma sombra suave ao lado." fetchpriority="high">
-      <button class="hotspot" type="button" aria-describedby="hotspot-dica" aria-label="Detalhe da coroa do molar">
-        <span class="hotspot-halo" aria-hidden="true"></span>
-        <span class="hotspot-ponto" aria-hidden="true"></span>
-        <span class="hotspot-dica" id="hotspot-dica" role="tooltip">porcelana, uma sessão</span>
-      </button>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Serviços -->
-  <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
-    <div class="secao-cabeca">
-      <p class="chip-linha"><span class="chip">serviços</span></p>
-      <h2 id="servicos-titulo">O que fazemos</h2>
-      <p>Seis frentes de trabalho. Toque em qualquer uma para simular a faixa de preço.</p>
-    </div>
-    <ul class="servicos">
-      <li class="servico servico-com-foto">
-        <figure class="servico-midia">
-          <img src="img/servico-limpeza-bandeja.webp" width="1456" height="1088" alt="Bandeja de aço com instrumentos de limpeza dental alinhados e um espelho bucal sobre um campo verde-menta, vistos de cima." loading="lazy" decoding="async">
-          <h3>Avaliação e limpeza</h3>
-          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/></svg></span>
-        </figure>
-        <p>Exame completo, radiografia, remoção de tártaro e polimento. É a porta de entrada de todo tratamento.</p>
-        <a href="#simulador" data-servico="limpeza">Simular limpeza<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-      <li class="servico servico-com-foto">
-        <figure class="servico-midia">
-          <img src="img/servico-clareamento-moldeira.webp" width="1456" height="1088" alt="Moldeira transparente de clareamento sobre um modelo de arcada em resina branca, ao lado de uma seringa de gel, sobre fundo verde-menta." loading="lazy" decoding="async">
-          <h3>Clareamento</h3>
-          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span>
-        </figure>
-        <p>No consultório, em duas sessões, ou em casa com moldeira feita sob medida. Explicamos a diferença antes de você escolher.</p>
-        <a href="#simulador" data-servico="clareamento">Simular clareamento<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-      <li class="servico">
-        <span class="servico-disco" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/><path d="M9.5 8.5l5 3M9.5 11.5l5-3"/></svg></span>
-        <h3>Restaurações</h3>
-        <p>Resina na cor do seu dente para cáries, trincas e desgastes. Em geral resolvemos até dois dentes por sessão.</p>
-        <a href="#simulador" data-servico="restauracao">Simular restauração<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-      <li class="servico servico-com-foto">
-        <figure class="servico-midia">
-          <img src="img/servico-alinhadores-gesso.webp" width="1456" height="1088" alt="Alinhador transparente encaixado em um modelo de gesso de arcada dentária, com dois outros alinhadores em caixinhas abertas ao lado." loading="lazy" decoding="async">
-          <h3>Alinhadores transparentes</h3>
-          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 14c0-5 3.6-9 8-9s8 4 8 9"/><path d="M6.5 14c0-3.4 2.5-6.2 5.5-6.2s5.5 2.8 5.5 6.2"/><path d="M4 14h2.5M17.5 14H20M9 13h1.5M13.5 13H15"/></svg></span>
-        </figure>
-        <p>Planejamento digital, placas trocadas a cada duas semanas e consultas curtas de acompanhamento.</p>
-        <a href="#simulador" data-servico="alinhadores">Simular alinhadores<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-      <li class="servico servico-com-foto">
-        <figure class="servico-midia">
-          <img src="img/servico-implante-modelo.webp" width="1456" height="1088" alt="Modelo didático de implante dentário com pino de titânio e coroa de cerâmica branca, em pé sobre fundo verde-menta." loading="lazy" decoding="async">
-          <h3>Implantes</h3>
-          <span class="servico-disco servico-disco-vidro" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6l-1 5H10z"/><path d="M10 8h4v2h-4zM10.5 10h3l-.5 3h-2zM11 13h2l-.4 3h-1.2zM11.4 16h1.2l-.6 4z"/></svg></span>
-        </figure>
-        <p>Substituição de um ou mais dentes com pino de titânio e coroa de cerâmica, em etapas com intervalo para cicatrizar.</p>
-        <a href="#simulador" data-servico="implante">Simular implante<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-      <li class="servico">
-        <span class="servico-disco" aria-hidden="true"><svg class="servico-icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c-2.5 0-4 1.6-4.6 3.5C6.6 9 7.6 12 8.4 15.4c.4 1.8 1 3.6 2 3.6.9 0 1-2.2 1.6-2.2s.7 2.2 1.6 2.2c1 0 1.6-1.8 2-3.6.8-3.4 1.8-6.4 1-8.9C16 4.6 14.5 3 12 3z"/><path d="M12 7v9"/></svg></span>
-        <h3>Tratamento de canal</h3>
-        <p>Quando a dor chega ao nervo. Fazemos com anestesia reforçada e, na maioria dos casos, em uma ou duas sessões.</p>
-        <a href="#simulador" data-servico="canal">Simular canal<span class="seta" aria-hidden="true">&rarr;</span></a>
-      </li>
-    </ul>
-  </section>
-
+    <div class="respiro" aria-hidden="true"><div class="respiro__some" data-vaga="perguntas"></div></div>
+<div class="nasc">
   <!-- Agendamento -->
   <section class="secao secao-hortela" id="agendar" aria-labelledby="agendar-titulo">
     <div class="secao-cabeca">
@@ -436,12 +498,12 @@
       </div>
       <div class="como-bloco">
         <h3>Como funciona por dentro</h3>
-        <p>O site é um conjunto de três arquivos: um de texto e estrutura (HTML), um de aparência (CSS) e um de comportamento (JavaScript). Quando você abre a página, o navegador lê os três e monta tudo sozinho. O calendário é gerado na hora com a data do seu aparelho. Os horários "ocupados" são sorteados de um jeito fixo para cada dia, então o mesmo dia mostra sempre os mesmos horários. O simulador faz contas simples com uma tabela de valores. Se você confirmar um horário, ele fica guardado só na memória do seu navegador.</p>
+        <p>O site é feito de três tipos de arquivo: texto e estrutura (HTML), aparência (CSS) e comportamento (JavaScript). Quando você abre a página, o navegador lê todos e monta tudo sozinho. O implante do início é desenhado em 3D na hora, no seu aparelho, e se move conforme você rola a página. O calendário é gerado na hora com a data do seu aparelho. Os horários "ocupados" são sorteados de um jeito fixo para cada dia, então o mesmo dia mostra sempre os mesmos horários. O simulador faz contas simples com uma tabela de valores. Se você confirmar um horário, ele fica guardado só na memória do seu navegador.</p>
       </div>
       <details class="como-tecnico">
         <summary>Detalhes técnicos</summary>
         <ul>
-          <li>HTML, CSS e JavaScript puros, sem framework, sem biblioteca, sem CDN e sem analytics.</li>
+          <li>Agenda, simulador e comparador em HTML, CSS e JavaScript puros (<code>js/app.js</code>). O início em 3D usa three.js, GSAP e Lenis, e os títulos animados usam React com spring-text-engine; tudo compilado e servido pelo próprio site, sem CDN e sem analytics.</li>
           <li><code>Content-Security-Policy</code> por <code>meta</code>: <code>default-src 'self'</code>, sem script inline, sem estilo inline, <code>connect-src 'none'</code>, <code>form-action 'none'</code>.</li>
           <li>Fontes variáveis Outfit e Figtree servidas localmente em <code>fonts/</code> (woff2, subconjunto latino), licença SIL OFL.</li>
           <li>Calendário gerado com <code>Date</code> no fuso do visitante; disponibilidade pseudoaleatória determinística por hash da data (função simples de 32 bits).</li>
@@ -452,34 +514,36 @@
       </details>
     </div>
   </section>
+</div>
 
-</main>
-
-<footer class="rodape">
-  <div class="luz luz-1" aria-hidden="true"></div>
-  <div class="luz luz-2" aria-hidden="true"></div>
-  <div class="rodape-grade">
-    <div>
-      <p class="rodape-marca">Nascente Odontologia</p>
+  </main>
+  <footer class="rodape" id="rodape">
+  <p class="rodape__marca" role="img" aria-label="Nascente">
+    <span aria-hidden="true">nascen</span><span class="rodape__l" aria-hidden="true"><span class="rodape__vaga" data-vaga="rodape"></span></span><span aria-hidden="true">e</span>
+  </p>
+  <div class="rodape__grade">
+    <nav class="rodape__links" aria-label="Rodapé">
+      <a class="link" href="#agendar">Agendar</a>
+      <a class="link" href="#simulador">Simulador</a>
+      <a class="link" href="#antes-depois">Antes e depois</a>
+      <a class="link" href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="rodape__bloco">
+      <p>Nascente Odontologia</p>
       <p>Consultório fictício, criado como demonstração. Nenhum dado desta página é real.</p>
     </div>
-    <div>
-      <p><a href="#agendar">Agendar</a></p>
-      <p><a href="#simulador">Simulador</a></p>
-      <p><a href="#antes-depois">Antes e depois</a></p>
-      <p><a href="#duvidas">Dúvidas</a></p>
-    </div>
-    <div>
-      <p>Site feito pela <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>, Cuiabá.</p>
+    <div class="rodape__bloco">
+      <p>Site feito pela <a class="link" href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a>, Cuiabá.</p>
       <p>Sem cookies, sem rastreamento, sem envio de dados.</p>
     </div>
   </div>
 </footer>
 
-<div class="aviso-demo" role="note">
+  <canvas class="palco" aria-hidden="true"></canvas>
+  <div class="aviso-demo" role="note">
   Demonstração da <a href="https://mileumalinhas.com.br" rel="noopener">Mil e Uma Linhas!</a> com dados fictícios. Nada aqui é vendido ou enviado.
 </div>
-
-<script src="js/app.js" defer></script>
+  <script src="./js/app.js?v=20261113" defer></script>
+  <script type="module" src="./js/letras.js?v=20261113"></script>
 </body>
 </html>
